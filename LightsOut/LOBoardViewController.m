@@ -15,9 +15,6 @@
 @interface LOBoardViewController ()
 
 @property (strong, nonatomic) NSMutableArray *lightArray;
-//@property (strong, nonatomic) NSMutableArray *twoDimensionalLightArray;
-//@property (strong, nonatomic) UIButton *light;
-@property (strong, nonatomic) NSMutableArray *tagArray;
 
 @property (nonatomic, assign) int actions;
 
@@ -27,67 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.lightArray);
-//    self.twoDimensionalLightArray = [[NSMutableArray alloc] init];
+
     [self setupUI];
-    NSLog(@"%@", [self.lightArray objectAtIndex:0]);
 }
 
 - (void)setupUI {
-//    CGFloat width = self.view.bounds.size.width;
-//
-//    CGFloat xx = self.view.frame.size.width / 2;
-//    CGFloat yy = self.view.frame.size.height / 2;
-//    
-//    UIView *lightContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
-//    lightContainer.center = CGPointMake(xx, yy);
-//    [[lightContainer layer] setBorderWidth:4.0f];
-//    [[lightContainer layer] setBorderColor:[UIColor whiteColor].CGColor];
-//    
-//    [self.view addSubview:lightContainer];
-//    
-//    CGFloat x = lightContainer.frame.origin.x;
-//    CGFloat y = lightContainer.frame.origin.y;
-//    int titleNumber = 0;
-//    int index = 0;
-//    NSInteger lightTag = 0;
-//    self.tagArray = [[NSMutableArray alloc] init];
-//
-//    for (int i = 0; i < 5; i++) {
-//        self.lightArray = [[NSMutableArray alloc] init];
-//        for (int j = 0; j < 5; j++) {
-//            self.light = [UIButton buttonWithType:UIButtonTypeCustom];
-//            [self.light addTarget:self action:@selector(lightAction:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [self.light setFrame:CGRectMake(x, y, width / 5, width / 5)];
-//            [self.light setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//            [[self.light layer] setBorderWidth:2.0f];
-//            [[self.light layer] setBorderColor:[UIColor whiteColor].CGColor];
-//            [[self.light layer] setBackgroundColor:[UIColor blackColor].CGColor];
-//            
-//            NSNumber *number = [NSNumber numberWithInt:titleNumber];
-//            [self.light setTitle:[NSString stringWithFormat:@"%@", number] forState:UIControlStateNormal];
-//            titleNumber++;
-//            
-//            
-//            [self.light setTag:lightTag];
-//            lightTag++;
-//            [self.tagArray addObject:self.light];
-//            [self.lightArray addObject:self.light];
-//            
-//            [self.view addSubview:self.light];
-//            
-//            x += width / 5;
-//        }
-//        [self.twoDimensionalLightArray insertObject:self.lightArray atIndex:index];
-//        index++;
-//        
-//        x = 0;
-//        y += width / 5;
-//    }
-//////////////////////////////////////////////////////////////////////////////
-    // create a mutable array to add 'light buttons to'
-//    NSMutableArray *lightArray = [[NSMutableArray alloc] init];
     
     CGFloat viewWidth = self.view.bounds.size.width;
     CGFloat viewHeight = self.view.bounds.size.height;
@@ -106,9 +47,6 @@
         [lightButton setTag:i];
         
         [self.lightArray addObject:lightButton];
-    
-        NSLog(@"%ld", self.lightArray.count);
-//        NSLog(@"%ld", lightButton.tag);
         
         // setup UI for each light button
         [[lightButton layer] setBorderWidth:1.0f];
@@ -148,20 +86,18 @@
     
     NSInteger left = (long)[sender tag];
     if (left % 5 == 0) {
-        NSLog(@"There is no left");
+//        NSLog(@"There is no left");
     } else {
         if ([[self.lightArray objectAtIndex:--left] backgroundColor] == (__bridge CGColorRef _Nullable)([UIColor blueColor])) {
             [[self.lightArray objectAtIndex:left] setBackgroundColor:[UIColor blackColor]];
-            NSLog(@"black");
         } else {
             [[self.lightArray objectAtIndex:left] setBackgroundColor:[UIColor blueColor]];
-            NSLog(@"blue %@ %ld", [self.lightArray objectAtIndex:left], left);
         }
     }
     
     NSInteger top = (long)[sender tag];
     if (top < 5) {
-        NSLog(@"There is no top");
+//        NSLog(@"There is no top");
     } else {
         top -= 5;
         if ([[self.lightArray objectAtIndex:top] backgroundColor] == (__bridge CGColorRef _Nullable)([UIColor blueColor])) {
@@ -173,7 +109,7 @@
     
     NSInteger right = (long)[sender tag];
     if ((right += 1) % 5 == 0) {
-        NSLog(@"There is no right");
+//        NSLog(@"There is no right");
     } else {
         if ([[self.lightArray objectAtIndex:right] backgroundColor] == (__bridge CGColorRef _Nullable)([UIColor blueColor])) {
             [[self.lightArray objectAtIndex:right] setBackgroundColor:[UIColor blackColor]];
@@ -184,7 +120,7 @@
     
     NSInteger bottom = (long)[sender tag];
     if (bottom > 19 ) {
-        NSLog(@"There is no bottom");
+//        NSLog(@"There is no bottom");
     } else {
         bottom += 5;
         if ([[self.lightArray objectAtIndex:bottom] backgroundColor] == (__bridge CGColorRef _Nullable)([UIColor blueColor])) {
