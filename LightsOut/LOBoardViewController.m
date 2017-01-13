@@ -94,28 +94,52 @@
 }
 
 - (void)lvlFour {
-    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 2] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 5] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:10] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 8] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
+
 - (void)lvlFive {
+    [[self.lightArray objectAtIndex:15] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:6] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:20] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
+
 - (void)lvlSix {
-    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 8] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:15] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
+
 - (void)lvlSeven {
     [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:10] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:22] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)lvlEight {
+    [[self.lightArray objectAtIndex:10] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:20] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:12] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)lvlNine {
+    [[self.lightArray objectAtIndex:16] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:18] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:14] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)lvlTen {
+    [[self.lightArray objectAtIndex: 8] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:15] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:16] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)lightAction:(id)sender {
@@ -214,32 +238,46 @@
             [self lvlThree];
             break;
         case 4:
+            [self lvlFour];
             break;
         case 5:
+            [self lvlFive];
             break;
         case 6:
+            [self lvlSix];
             break;
         case 7:
+            [self lvlSeven];
             break;
         case 8:
+            [self lvlEight];
             break;
         case 9:
+            [self lvlNine];
             break;
         case 10:
+            [self lvlTen];
             break;
         case 11:
+//            [self lvlEleven];
             break;
         case 12:
+//            [self lvlTwelve];
             break;
         case 13:
+//            [self lvlThirteen];
             break;
         case 14:
+//            [self lvlFourteen];
             break;
         case 15:
+//            [self lvlFifteen];
             break;
         case 16:
+//            [self lvlSixteen];
             break;
         case 17:
+//            [self lvlSeventeen];
             break;
         default:
             NSLog(@"default selected");
