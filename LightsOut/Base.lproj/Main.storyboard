@@ -103,32 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozz-jh-lFe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="466"/>
-        </scene>
-        <!--Test Board View Controller-->
-        <scene sceneID="lZI-da-FXX">
-            <objects>
-                <viewController id="WAh-VZ-0Bz" customClass="LOTestBoardViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="072-rn-xWd"/>
-                        <viewControllerLayoutGuide type="bottom" id="AfW-Ly-Uhu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GA5-vH-NAv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTD-8n-bOI">
-                                <frame key="frameInset" minX="43" minY="52" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qoh-uf-Adr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2426" y="466"/>
+            <point key="canvasLocation" x="1708" y="466"/>
         </scene>
     </scenes>
 </document>

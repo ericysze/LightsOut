@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *lightArray;
 
 @property (nonatomic, assign) int actions;
+@property (nonatomic, assign) int lvlNumber;
 
 @end
 
@@ -67,14 +68,54 @@
         }
     }
     
-    [self levelOneSetup];
+    [self lvlOne];
 }
 
-- (void)levelOneSetup {
-    [[self.lightArray objectAtIndex:0] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:4] sendActionsForControlEvents:UIControlEventTouchUpInside];
+- (void)lvlOne {
+    self.lvlNumber = 1;
+    [[self.lightArray objectAtIndex: 0] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 4] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:20] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:24] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)lvlTwo {
+    [[self.lightArray objectAtIndex: 6] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 8] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:16] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:18] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)lvlThree {
+    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)lvlFour {
+    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+- (void)lvlFive {
+    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+- (void)lvlSix {
+    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+- (void)lvlSeven {
+    [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 9] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:11] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)lightAction:(id)sender {
@@ -150,12 +191,59 @@
     NSLog(@"%i BLUE LIGHTS ON", blueColorCount);
     
     if (blueColorCount == 0) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"You win!" message:@"Go to level two" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"You win!" message:@"Go to next level" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:ok];
         
-        [self presentViewController:alertController animated:YES completion:nil];
+        // on completion, it should go to the next level after
+        // - * making a positive rewarding sound, (maybe a little action, spinning star rising up screen *
+        // reuse the same screen, unneccesary to push a new one onto the stack to
+        // - *** lights are already off, just need to turn on next level's lights ***
+        self.lvlNumber += 1;
+        [self presentViewController:alertController animated:YES completion:^{[self nextLvl:self.lvlNumber];}];
+    }
+}
+
+- (void)nextLvl:(int)lvlNum {
+    switch (lvlNum) {
+        case 2:
+            [self lvlTwo];
+            break;
+        case 3:
+            [self lvlThree];
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 8:
+            break;
+        case 9:
+            break;
+        case 10:
+            break;
+        case 11:
+            break;
+        case 12:
+            break;
+        case 13:
+            break;
+        case 14:
+            break;
+        case 15:
+            break;
+        case 16:
+            break;
+        case 17:
+            break;
+        default:
+            NSLog(@"default selected");
+            break;
     }
 }
 

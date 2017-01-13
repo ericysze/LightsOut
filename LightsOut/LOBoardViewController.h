@@ -10,6 +10,4 @@
 
 @interface LOBoardViewController : UIViewController
 
-@property (assign, nonatomic) NSInteger levelNumber;
-
 @end

@@ -40,14 +40,13 @@
 //}
 
 // This will get called too before the view appears
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"sendLevelNum"]) {
-        LOBoardViewController *vc = [segue destinationViewController];
-        
-        // Get button tag number (or do whatever you need to do here, based on your object
-        [vc setLevelNumber:[(UIButton *)sender tag]];
-    }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"sendLevelNum"]) {
+//        LOBoardViewController *vc = [segue destinationViewController];
+//        
+//        // Get button tag number (or do whatever you need to do here, based on your object
+//        [vc setLevelNumber:[(UIButton *)sender tag]];
+//    }
 }
 
 /*

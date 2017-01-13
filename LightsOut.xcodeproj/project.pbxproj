@@ -16,7 +16,6 @@
 		1552F6101D91083000653343 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1552F60E1D91083000653343 /* LaunchScreen.storyboard */; };
 		1552F6191D91084300653343 /* LOBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1552F6181D91084300653343 /* LOBoardViewController.m */; };
 		1552F61C1D9108F500653343 /* LOBoardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1552F61B1D9108F500653343 /* LOBoardLayout.m */; };
-		157478FE1E1C69620008E919 /* LOTestBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157478FD1E1C69620008E919 /* LOTestBoardViewController.m */; };
 		15915D7A1E05040700501709 /* LOBoardLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 15915D791E05040700501709 /* LOBoardLogic.m */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +36,6 @@
 		1552F6181D91084300653343 /* LOBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBoardViewController.m; sourceTree = "<group>"; };
 		1552F61A1D9108F500653343 /* LOBoardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBoardLayout.h; sourceTree = "<group>"; };
 		1552F61B1D9108F500653343 /* LOBoardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBoardLayout.m; sourceTree = "<group>"; };
-		157478FC1E1C69620008E919 /* LOTestBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTestBoardViewController.h; sourceTree = "<group>"; };
-		157478FD1E1C69620008E919 /* LOTestBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTestBoardViewController.m; sourceTree = "<group>"; };
 		15915D781E05040700501709 /* LOBoardLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBoardLogic.h; sourceTree = "<group>"; };
 		15915D791E05040700501709 /* LOBoardLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBoardLogic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,8 +109,6 @@
 				15115A661E09BFFF00FD9071 /* LOLevelsViewController.m */,
 				1552F6171D91084300653343 /* LOBoardViewController.h */,
 				1552F6181D91084300653343 /* LOBoardViewController.m */,
-				157478FC1E1C69620008E919 /* LOTestBoardViewController.h */,
-				157478FD1E1C69620008E919 /* LOTestBoardViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -206,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				157478FE1E1C69620008E919 /* LOTestBoardViewController.m in Sources */,
 				15115A641E09BD6B00FD9071 /* LOMainScreenViewController.m in Sources */,
 				15915D7A1E05040700501709 /* LOBoardLogic.m in Sources */,
 				15115A671E09BFFF00FD9071 /* LOLevelsViewController.m in Sources */,
