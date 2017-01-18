@@ -19,6 +19,8 @@
 @property (nonatomic, assign) int actions;
 @property (nonatomic, assign) int lvlNumber;
 
+@property (strong, nonatomic) NSMutableArray *lvlSetupArray;
+
 @end
 
 @implementation LOBoardViewController
@@ -26,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.lvlSetupArray = [[NSMutableArray alloc] init];
     [self setupUI];
 }
 
@@ -68,11 +71,31 @@
         }
     }
     
+    self.lvlNumber = 1;
     [self lvlOne];
+    [self automaticLvlCreator];
+}
+
+- (void)automaticLvlCreator {
+    NSMutableArray *randArr = [[NSMutableArray alloc] initWithObjects: @0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15, @16, @17, @18, @19, @20, @21, @22, @23, @24, nil];
+    for (int i = 0; i < 4; i++) {
+        NSInteger randIdx = arc4random_uniform((int)[randArr count]);
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        [arr addObject:[randArr objectAtIndex:randIdx]];
+        [self.lvlSetupArray addObjectsFromArray:arr];
+        NSLog(@"%@ check object at index", [randArr objectAtIndex:randIdx]);
+        [randArr removeObjectAtIndex:randIdx];
+        NSLog(@"%@ replaced", [randArr objectAtIndex:randIdx]);
+        
+        
+        
+//        [[self.lightArray objectAtIndex: ] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
+//    [self.lvlSetupArray addObject: randArr];
+    NSLog(@"%@", self.lvlSetupArray);
 }
 
 - (void)lvlOne {
-    self.lvlNumber = 1;
     [[self.lightArray objectAtIndex: 0] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex: 4] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:20] sendActionsForControlEvents:UIControlEventTouchUpInside];
@@ -96,14 +119,14 @@
 - (void)lvlFour {
     [[self.lightArray objectAtIndex: 2] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex: 5] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:10] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex: 8] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:10] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)lvlFive {
-    [[self.lightArray objectAtIndex:15] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex: 1] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:6] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex: 6] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:15] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:20] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -123,16 +146,16 @@
 
 - (void)lvlEight {
     [[self.lightArray objectAtIndex:10] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self.lightArray objectAtIndex:12] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:20] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:12] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)lvlNine {
+    [[self.lightArray objectAtIndex:14] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:16] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:17] sendActionsForControlEvents:UIControlEventTouchUpInside];
     [[self.lightArray objectAtIndex:18] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [[self.lightArray objectAtIndex:14] sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)lvlTen {
@@ -212,7 +235,7 @@
         }
     }
     
-    NSLog(@"%i BLUE LIGHTS ON", blueColorCount);
+//    NSLog(@"%i BLUE LIGHTS ON", blueColorCount);
     
     if (blueColorCount == 0) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"You win!" message:@"Go to next level" preferredStyle:UIAlertControllerStyleAlert];
